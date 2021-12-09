@@ -1,0 +1,15 @@
+{
+    "name": "picolablv/adventofcode",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andris Šaudinis",
+            "email": "andris@picolab.lv"
+        }
+    ],
+    "autoload": {
+        "classmap": ["src/"]
+    },
+    "require": {}
+}

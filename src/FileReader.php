@@ -4,6 +4,8 @@ class FileReader
 {
     protected $handle;
 
+    public $length = 512;
+
     public function __construct($filePath)
     {
         $this->handle = fopen($filePath, 'r');
@@ -11,7 +13,7 @@ class FileReader
 
     public function rows()
     {
-        while (($line = fgets($this->handle, 512)) !== false) {
+        while (($line = fgets($this->handle, $this->length)) !== false) {
 
             yield $line;
         }
@@ -19,5 +21,11 @@ class FileReader
         fclose($this->handle);
 
         return;
+    }
+
+
+    public function setLength($length)
+    {
+        $this->length = $length;
     }
 }
